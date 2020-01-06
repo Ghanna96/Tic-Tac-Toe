@@ -1,20 +1,40 @@
 <!DOCTYPE html>
-<html>
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="author" content="">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <link href="css/style.css" rel="stylesheet">
-</head>
+        <title>Tic Tac Toe Board Game</title>
 
-<body>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
 
-
-  <script src="js/script.js"></script>
-</body>
-
+    <body>
+        <div class="container" id="board">
+            <!-- Heading -->
+            <div class="row" id="row1">
+                <h1>Tic Tac Toe</h1>
+            </div>
+            <!-- Top Row -->
+            <div class="row" id="row2">
+                <div class="top left square" data-id=0></div>
+                <div class="top middle square" data-id=1></div>
+                <div class="top right square" data-id=2></div>
+            </div>
+            <!-- Middle Row -->
+            <div class="row" id="row3">
+                <div class="middle left square" data-id=3></div>
+                <div class="middle center square" data-id=4></div>
+                <div class="middle right square" data-id=5></div>
+            </div>
+            <!-- Bottom Row -->
+            <div class="row" id="row4">
+                <div class="bottom left square" data-id=6></div>
+                <div class="bottom middle square" data-id=7></div>
+                <div class="bottom right square" data-id=8></div>
+            </div>
+        </div>
+<script src="js/script.js"></script>
+    </body>
 </html>
