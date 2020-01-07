@@ -13,11 +13,14 @@ const gameBoard= (()=>{
     let turn=0;
     gBoard.fill('',0,9);
     
-    const display= ()=>{
-        for(let i in gBoard){
-            let el = document.createTextNode(`${gBoard[i]}`);
-            squares[i].appendChild(el);
-        }
+    const display= (b)=>{
+        document.querySelector("#board").classList.toggle('hide');
+        b.style.display="none";
+        // this.style.display="none";
+        // for(let i in gBoard){
+        //     let el = document.createTextNode(`${gBoard[i]}`);
+        //     squares[i].appendChild(el);
+        // }
     };
 
     const getTurn= ()=> turn;
@@ -41,11 +44,14 @@ const gameBoard= (()=>{
     const getWinner= ()=>{
         let x= getMarkIndexes("X");
         let o= getMarkIndexes("O");
+        if(x.length+o.length==9){
+            return "It's a tie!"
+        }
         for(let i in winComb) {
             if(checker(x,winComb[i])){
-                return "Player1";    
+                return "Player1 wins!";    
             }else if(checker(o,winComb[i])){
-                return "Player2";
+                return "Player2 wins!";
             }
         }
         return false
@@ -74,6 +80,9 @@ const domManage = (()=>{
             gameBoard.playerTurn();
             let index= box.getAttribute('data-id');
             gameBoard.updateElement(index,box.textContent);
+            if(gameBoard.getWinner()){
+                alert(gameBoard.getWinner());
+            }
         }else {return}
     }
 
@@ -86,5 +95,5 @@ const domManage = (()=>{
 
 })();
 
-gameBoard.display();
+//gameBoard.display();
 // players.filter((x)=> x.played==false)

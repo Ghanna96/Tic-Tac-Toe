@@ -6,30 +6,29 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <title>Tic Tac Toe Board Game</title>
-
+        <link href="https://fonts.googleapis.com/css?family=Acme|Exo+2&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
-        <div class="container" id="board">
+        <div id="button">
+            <button id="play" onclick="gameBoard.display(this)"> Play Now</button>
+        </div>
+        <div class="hide" id="board">
             <!-- Heading -->
             <div class="row" id="row1">
                 <h1>Tic Tac Toe</h1>
             </div>
             <!-- Top Row -->
-            <div class="row" id="row2">
+            <div class="row tab" id="row2" >
                 <div class="top left square" data-id=0></div>
                 <div class="top middle square" data-id=1></div>
                 <div class="top right square" data-id=2></div>
-            </div>
             <!-- Middle Row -->
-            <div class="row" id="row3">
                 <div class="middle left square" data-id=3></div>
                 <div class="middle center square" data-id=4></div>
                 <div class="middle right square" data-id=5></div>
-            </div>
             <!-- Bottom Row -->
-            <div class="row" id="row4">
                 <div class="bottom left square" data-id=6></div>
                 <div class="bottom middle square" data-id=7></div>
                 <div class="bottom right square" data-id=8></div>
