@@ -9,7 +9,7 @@ const player2= newPlayer('Player2','O');
 const winComb=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
 
 const domManage = (()=>{
-    function clickBox(){ //function called when clicking box
+    function clickBox(){ 
         let box= this;
         if(box.textContent==""){
             if(gameBoard.getTurn()==0){
@@ -20,9 +20,7 @@ const domManage = (()=>{
             gameBoard.playerTurn();
             let index= box.getAttribute('data-id');
             gameBoard.updateElement(index,box.textContent);
-            if(gameBoard.getWinner()){
-                alert(gameBoard.getWinner());
-            }
+            gameBoard.getWinner();
         }else {return}
     }
 
@@ -37,8 +35,13 @@ const domManage = (()=>{
             box.removeEventListener('click',clickBox);
         })
     };
+    const displayResult = (r)=>{
+        let winner= document.querySelector('#winner');
+        winner.textContent=r;
+    }
     return{
-        removeEventClick
+        removeEventClick,
+        displayResult
     }
 })();
 
@@ -76,16 +79,19 @@ const gameBoard= (()=>{
         for(let i in winComb) {
             if(checker(x,winComb[i])){
                 domManage.removeEventClick();
-                return "Player1 wins!";
+                domManage.displayResult("Player1 wins!");
+                return
                 
             }else if(checker(o,winComb[i])){
                 domManage.removeEventClick();
-                return "Player2 wins!";
+                domManage.displayResult("Player2 wins!");
+                return
             }
         }
         if(x.length+o.length==9){
             domManage.removeEventClick();
-            return "It's a tie!"
+            domManage.displayResult("It's a tie!");
+            return 
         }
         return false
     }
