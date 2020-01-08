@@ -6,19 +6,19 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <title>Tic Tac Toe Board Game</title>
-        <link href="https://fonts.googleapis.com/css?family=Acme|Exo+2&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Acme|Shadows+Into+Light&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
+        <section class="row" >
+            <h1 id="row1">Tic Tac Toe</h1>
+        </section>
         <div id="button">
             <button id="play" onclick="gameBoard.display(this)"> Play Now</button>
         </div>
         <div class="hide" id="board">
             <!-- Heading -->
-            <div class="row" id="row1">
-                <h1>Tic Tac Toe</h1>
-            </div>
             <!-- Top Row -->
             <div class="row tab" id="row2" >
                 <div class="top left square" data-id=0></div>
@@ -34,6 +34,9 @@
                 <div class="bottom right square" data-id=8></div>
             </div>
         </div>
+        <section id="winner">
+            
+        </section>
 <script src="js/script.js"></script>
     </body>
 </html>

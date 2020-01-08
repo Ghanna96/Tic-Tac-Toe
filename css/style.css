@@ -9,7 +9,7 @@ body{
 }
 
 #button{
-    margin: 200px;
+    margin-top: 200px;
     text-align: center;
 }
 #board {
@@ -56,7 +56,11 @@ body{
     margin: 0 auto;
     width: 302px;
 }
-
+#row1{
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Shadows Into Light', cursive;
+}
 .top {
     border-bottom-color: rgba(52, 58, 64, 0.500);
     border-bottom-style: solid;
