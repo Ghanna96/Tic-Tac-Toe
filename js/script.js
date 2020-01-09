@@ -41,6 +41,7 @@ const domManage = (()=>{
     }
     return{
         removeEventClick,
+        addEventClick,
         displayResult
     }
 })();
@@ -54,7 +55,15 @@ const gameBoard= (()=>{
         document.querySelector("#board").classList.toggle('hide');
         b.style.display="none";
     };
-
+    const resetBoard=()=>{
+        gBoard.fill('',0,9);
+        domManage.removeEventClick();
+        domManage.addEventClick();
+        squares.forEach((x)=>{
+            x.textContent="";
+        });
+        domManage.displayResult("");
+    }
     const getTurn= ()=> turn;
 
     const getMarkIndexes= (mark)=> gBoard.reduce(function(a, e, i) { 
@@ -69,7 +78,6 @@ const gameBoard= (()=>{
 
     function updateElement(i,n){ //update gBoard
         gBoard[i]=n;
-        console.log(gBoard);
     };
     let checker = (arr, target) => target.every(v => arr.includes(v));
 
@@ -101,7 +109,8 @@ const gameBoard= (()=>{
         updateElement,
         playerTurn,
         getTurn,
-        getWinner
+        getWinner,
+        resetBoard
     }
 })();
 
